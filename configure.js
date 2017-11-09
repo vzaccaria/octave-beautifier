@@ -27,6 +27,7 @@ generateProject(_ => {
     })
     _.cmd("((echo '#!/usr/bin/env node') && cat ./lib/index.js) > index.js", "./lib/index.js")
     _.cmd("chmod +x ./index.js")
+    _.cmd("./node_modules/.bin/mocha ./lib/test.js")
   })
 
   _.collect("test", _ => {
